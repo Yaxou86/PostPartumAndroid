@@ -84,6 +84,11 @@ class WelcomeScreenActivity : AppCompatActivity() {
 
 
 
+
+
+
+
+                
                 /*Log.e("Yasmina Tangou", Gson().toJson(response.body()?.id))
                 Log.e("Yasmina Tangou", Gson().toJson(response.body()?.type))
                 Log.e("Yasmina Tangou", Gson().toJson(response.body()?.title))
