@@ -4,4 +4,5 @@
     <string name="evaluation_button">Take a Test</string>
     <string name="ppd_definition_button">What is ppd?</string>
     <string name="toast_message">Taking you to your test</string>
+    <string name="title_activity_questions">QuestionsActivity</string>
 </resources>

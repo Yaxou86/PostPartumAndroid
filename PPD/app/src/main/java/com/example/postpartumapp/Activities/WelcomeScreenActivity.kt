@@ -1,4 +1,4 @@
-package com.example.postpartumapp
+package com.example.postpartumapp.Activities
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -21,6 +21,7 @@ import retrofit2.Response
 
 
 
+
 class WelcomeScreenActivity : AppCompatActivity() {
 
     lateinit var progerssProgressDialog: ProgressDialog
@@ -30,14 +31,14 @@ class WelcomeScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.welcome_screen_layout)
+        setContentView(com.example.postpartumapp.R.layout.welcome_screen_layout)
 
 
         val imageView = ImageView(this)
-        imageView.setImageResource(R.drawable.ppd)
+        imageView.setImageResource(com.example.postpartumapp.R.drawable.ppd)
 
 
-        val textView = findViewById<TextView>(R.id.what_is_PPD)
+        val textView = findViewById<TextView>(com.example.postpartumapp.R.id.what_is_PPD)
         textView.setOnClickListener()
         {
 
@@ -48,13 +49,13 @@ class WelcomeScreenActivity : AppCompatActivity() {
 
         }
 
-        val button = findViewById<Button>(R.id.take_a_test)
+        val button = findViewById<Button>(com.example.postpartumapp.R.id.take_a_test)
 
         button.setOnClickListener()
         {
             Toast.makeText(
                 this@WelcomeScreenActivity,
-                R.string.toast_message, Toast.LENGTH_LONG
+                com.example.postpartumapp.R.string.toast_message, Toast.LENGTH_LONG
             ).show()
 
 
@@ -63,6 +64,9 @@ class WelcomeScreenActivity : AppCompatActivity() {
             progerssProgressDialog.setCancelable(false)
             progerssProgressDialog.show()
             getData()
+
+            val myIntent = Intent(this@WelcomeScreenActivity, QuestionsActivity::class.java)
+            this@WelcomeScreenActivity.startActivity(myIntent)
 
 
         }
@@ -82,13 +86,6 @@ class WelcomeScreenActivity : AppCompatActivity() {
             ) {
                 progerssProgressDialog.dismiss()
 
-
-
-
-
-
-
-                
                 /*Log.e("Yasmina Tangou", Gson().toJson(response.body()?.id))
                 Log.e("Yasmina Tangou", Gson().toJson(response.body()?.type))
                 Log.e("Yasmina Tangou", Gson().toJson(response.body()?.title))
