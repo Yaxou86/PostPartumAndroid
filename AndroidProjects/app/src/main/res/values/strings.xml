@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PostPartumApp</string>
+    <string name="title">Post Partum Depression Evaluation</string>
+    <string name="evaluation_button">Take a Test</string>
+    <string name="ppd_definition_button">What is ppd?</string>
+    <string name="toast_message">Taking you to your test</string>
+</resources>

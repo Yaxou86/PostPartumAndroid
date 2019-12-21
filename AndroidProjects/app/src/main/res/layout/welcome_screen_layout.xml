@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".WelcomeScreenActivity">
+
+    <ImageView
+        android:id="@+id/ppd_image"
+        android:layout_width="204dp"
+        android:layout_height="215dp"
+        android:layout_marginTop="192dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ppd" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        android:fontFamily="monospace"
+        app:layout_constraintBottom_toTopOf="@+id/ppd_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/take_a_test"
+        android:layout_width="407dp"
+        android:layout_height="49dp"
+        android:backgroundTint="@color/testButton"
+        android:fontFamily="monospace"
+        android:text="@string/evaluation_button"
+        android:textColor="@color/textColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintVertical_bias="0.861" />
+
+    <TextView
+        android:id="@+id/what_is_PPD"
+        android:layout_width="408dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="160dp"
+        android:clickable="true"
+        android:fontFamily="monospace"
+        android:text="@string/ppd_definition_button"
+        android:textAlignment="center"
+        android:textColor="@color/whatIsPpdText"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/take_a_test"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ppd_image"
+        app:layout_constraintVertical_bias="0.923" />
+</androidx.constraintlayout.widget.ConstraintLayout>
