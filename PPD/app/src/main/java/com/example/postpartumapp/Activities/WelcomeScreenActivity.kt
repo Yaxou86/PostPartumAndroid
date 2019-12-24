@@ -1,26 +1,15 @@
 package com.example.postpartumapp.Activities
 
-import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.postpartumapp.Network.RetrofitClientInstance
-import com.example.postpartumapp.model.RetroQuestionnaire
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
-@Suppress("DEPRECATION")
 class WelcomeScreenActivity : AppCompatActivity() {
 
-    lateinit var progerssProgressDialog: ProgressDialog
-    var dataList : RetroQuestionnaire? = null
 
     val WEB_URL =
         "https://www.nimh.nih.gov/health/publications/postpartum-depression-facts/index.shtml"
@@ -44,86 +33,17 @@ class WelcomeScreenActivity : AppCompatActivity() {
 
         }
 
-        val button = findViewById<Button>(com.example.postpartumapp.R.id.take_a_test)
+        val testStarterbutton = findViewById<Button>(com.example.postpartumapp.R.id.take_a_test)
 
-        button.setOnClickListener()
+        testStarterbutton.setOnClickListener()
         {
-            Toast.makeText(
-                this@WelcomeScreenActivity,
-                com.example.postpartumapp.R.string.toast_message, Toast.LENGTH_LONG
-            ).show()
-
-
-            progerssProgressDialog = ProgressDialog(this)
-            progerssProgressDialog.setTitle("Loading")
-            progerssProgressDialog.setCancelable(false)
-            progerssProgressDialog.show()
-            getData()
-            //Once the the user presses AGREE then move to the next activity.
-
-
-          val myIntent = Intent(this@WelcomeScreenActivity, DialogActivity::class.java)
-            intent.putExtra("OurData",dataList.toString())
-          this@WelcomeScreenActivity.startActivity(myIntent)
-
+            showDisclaimer()
         }
-
-
     }
 
-    private fun getData() {
-        val serviceCall = RetrofitClientInstance.getRetrofitInstance()
-            .create(RetrofitClientInstance.GetDataService::class.java)
-        serviceCall.allQuestions.enqueue(object : Callback<RetroQuestionnaire> {
-
-            override fun onResponse(
-                call: Call<RetroQuestionnaire>,
-                response: Response<RetroQuestionnaire>
-            ) {
-                progerssProgressDialog.dismiss()
-
-                dataList = response.body()!!
-                showDisclaimer(dataList!!)
-
-
-               //TODO: Remove this once everything works well
-                /*Log.e("Yasmina Tangou", Gson().toJson(response.body()?.id))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.type))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.title))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.totalQuestions))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.description))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.disclaimer))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.scaleLow))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.scaleMedium))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.scaleHigh))*/
-
-               /* for(item in response.body()?.questions!!) {
-                    Log.e("Yasmina Tangou",  Gson().toJson(item.question))
-                    //Log.e("Yasmina Tangou",  Gson().toJson(item.choices))
-                    for(item2 in item.choices) {
-                        Log.e("Yasmina Tangou",  item2.title)
-                        Log.e("Yasmina Tangou",  item2.value.toString())
-
-                    }
-                }
-*/
-
-            }
-
-            override fun onFailure(call: Call<RetroQuestionnaire>, t: Throwable) {
-                Log.e("Yasmina Error Tang", t.message)
-                progerssProgressDialog.dismiss()
-            }
-
-        })
-
-
-    }
-
-    private fun showDisclaimer(listOfData: RetroQuestionnaire) {
-        if(listOfData != null) {
-            Log.e("Mehdi Tangou", listOfData.disclaimer)
-        }
+    private fun showDisclaimer() {
+        val myIntent = Intent(this@WelcomeScreenActivity, DialogActivity::class.java)
+        this@WelcomeScreenActivity.startActivity(myIntent)
     }
 }
 
