@@ -20,7 +20,7 @@ import retrofit2.Response
 class WelcomeScreenActivity : AppCompatActivity() {
 
     lateinit var progerssProgressDialog: ProgressDialog
-    lateinit var dataList: RetroQuestionnaire
+    var dataList : RetroQuestionnaire? = null
 
     val WEB_URL =
         "https://www.nimh.nih.gov/health/publications/postpartum-depression-facts/index.shtml"
@@ -28,7 +28,6 @@ class WelcomeScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.example.postpartumapp.R.layout.welcome_screen_layout)
-
 
         val imageView = ImageView(this)
         imageView.setImageResource(com.example.postpartumapp.R.drawable.ppd)
@@ -84,7 +83,7 @@ class WelcomeScreenActivity : AppCompatActivity() {
                 progerssProgressDialog.dismiss()
 
                 dataList = response.body()!!
-                showDisclaimer(dataList)
+                showDisclaimer(dataList!!)
 
 
                //TODO: Remove this once everything works well
@@ -122,7 +121,9 @@ class WelcomeScreenActivity : AppCompatActivity() {
     }
 
     private fun showDisclaimer(listOfData: RetroQuestionnaire) {
-        Log.e("Mehdi Tangou", listOfData.disclaimer)
+        if(listOfData != null) {
+            Log.e("Mehdi Tangou", listOfData.disclaimer)
+        }
     }
 }
 

@@ -4,7 +4,6 @@ import android.app.Activity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-import org.json.JSONObject
 
 
 class DialogActivity : Activity() {
@@ -16,7 +15,7 @@ class DialogActivity : Activity() {
 
         val button = findViewById<Button>(com.example.postpartumapp.R.id.disclaimer_button)
 
-        val jsonObj = JSONObject(intent.getStringExtra("OurData"))
+//        val jsonObj = JSONObject(intent.getStringExtra("OurData"))
 
         button.setOnClickListener()
         {
