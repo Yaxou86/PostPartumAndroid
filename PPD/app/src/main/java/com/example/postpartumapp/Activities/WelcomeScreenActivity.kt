@@ -12,19 +12,15 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.postpartumapp.Network.RetrofitClientInstance
 import com.example.postpartumapp.model.RetroQuestionnaire
-import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
-
-
-
-
+@Suppress("DEPRECATION")
 class WelcomeScreenActivity : AppCompatActivity() {
 
     lateinit var progerssProgressDialog: ProgressDialog
+    lateinit var dataList: RetroQuestionnaire
 
     val WEB_URL =
         "https://www.nimh.nih.gov/health/publications/postpartum-depression-facts/index.shtml"
@@ -64,10 +60,12 @@ class WelcomeScreenActivity : AppCompatActivity() {
             progerssProgressDialog.setCancelable(false)
             progerssProgressDialog.show()
             getData()
+            //Once the the user presses AGREE then move to the next activity.
 
-            val myIntent = Intent(this@WelcomeScreenActivity, QuestionsActivity::class.java)
-            this@WelcomeScreenActivity.startActivity(myIntent)
 
+          val myIntent = Intent(this@WelcomeScreenActivity, DialogActivity::class.java)
+            intent.putExtra("OurData",dataList.toString())
+          this@WelcomeScreenActivity.startActivity(myIntent)
 
         }
 
@@ -75,7 +73,6 @@ class WelcomeScreenActivity : AppCompatActivity() {
     }
 
     private fun getData() {
-
         val serviceCall = RetrofitClientInstance.getRetrofitInstance()
             .create(RetrofitClientInstance.GetDataService::class.java)
         serviceCall.allQuestions.enqueue(object : Callback<RetroQuestionnaire> {
@@ -86,6 +83,11 @@ class WelcomeScreenActivity : AppCompatActivity() {
             ) {
                 progerssProgressDialog.dismiss()
 
+                dataList = response.body()!!
+                showDisclaimer(dataList)
+
+
+               //TODO: Remove this once everything works well
                 /*Log.e("Yasmina Tangou", Gson().toJson(response.body()?.id))
                 Log.e("Yasmina Tangou", Gson().toJson(response.body()?.type))
                 Log.e("Yasmina Tangou", Gson().toJson(response.body()?.title))
@@ -96,7 +98,7 @@ class WelcomeScreenActivity : AppCompatActivity() {
                 Log.e("Yasmina Tangou", Gson().toJson(response.body()?.scaleMedium))
                 Log.e("Yasmina Tangou", Gson().toJson(response.body()?.scaleHigh))*/
 
-                for(item in response.body()?.questions!!) {
+               /* for(item in response.body()?.questions!!) {
                     Log.e("Yasmina Tangou",  Gson().toJson(item.question))
                     //Log.e("Yasmina Tangou",  Gson().toJson(item.choices))
                     for(item2 in item.choices) {
@@ -105,8 +107,7 @@ class WelcomeScreenActivity : AppCompatActivity() {
 
                     }
                 }
-
-
+*/
 
             }
 
@@ -119,5 +120,10 @@ class WelcomeScreenActivity : AppCompatActivity() {
 
 
     }
+
+    private fun showDisclaimer(listOfData: RetroQuestionnaire) {
+        Log.e("Mehdi Tangou", listOfData.disclaimer)
+    }
 }
+
 

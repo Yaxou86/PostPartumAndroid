@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.WelcomeScreenActivity">
+
+    <FrameLayout
+        android:id="@+id/disclaimer_layout"
+        android:layout_width="284dp"
+        android:layout_height="538dp"
+        android:backgroundTint="@color/testButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.772"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/testButton"
+            android:fontFamily="serif-monospace"
+            android:text="Disclaimer"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="149dp"
+            tools:layout_editor_absoluteY="105dp" />
+
+        <TextView
+            android:id="@+id/disclaimer_text"
+            android:layout_width="283dp"
+            android:layout_height="271dp"
+            android:layout_marginTop="100dp"
+            android:backgroundTint="@color/testButton"
+            android:fontFamily="serif-monospace"
+            android:text="PLACEHOLDER"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="117dp" />
+
+        <Button
+            android:id="@+id/disclaimer_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="400dp"
+            android:clickable="true"
+            android:text="@string/disclaimer_button" />
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

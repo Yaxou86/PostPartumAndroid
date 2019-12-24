@@ -10,7 +10,7 @@
     tools:context=".Activities.QuestionsActivity">
 
 
-    
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
