@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".Activities.WelcomeScreenActivity"
+            android:name="com.example.postpartumapp.Activities.QuestionaireActivity"
+            android:label="@string/title_activity_questionaire"
+            android:theme="@style/NoActionBar">
+        </activity>
+        <activity
+            android:name="com.example.postpartumapp.Activities.WelcomeScreenActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,13 +26,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.QuestionsActivity"
-            android:label="@string/title_activity_questions"
-            android:theme="@style/NoActionBar" />
-        <activity
-            android:theme="@android:style/Theme.Holo.Dialog"
-            android:name=".Activities.DialogActivity">
-        </activity>
+            android:name="com.example.postpartumapp.Activities.DialogActivity"
+            android:theme="@android:style/Theme.Holo.Dialog"></activity>
     </application>
 
 </manifest>

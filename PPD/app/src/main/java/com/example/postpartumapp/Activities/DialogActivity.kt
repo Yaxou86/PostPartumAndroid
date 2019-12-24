@@ -2,6 +2,7 @@ package com.example.postpartumapp.Activities
 
 import android.app.Activity
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -36,10 +37,9 @@ class DialogActivity : Activity() {
         val disclaimerButton = findViewById<Button>(R.id.disclaimer_button)
         disclaimerButton.setOnClickListener()
         {
-            Log.e("Yasmina Tangou",  "Good Job")
+            val myIntent = Intent(this@DialogActivity, QuestionaireActivity::class.java)
+            this.startActivity(myIntent)
         }
-
-
 
 
     }

@@ -7,10 +7,7 @@
     android:background="@color/cardview_light_background"
     android:fillViewport="true"
     android:orientation="vertical"
-    tools:context=".Activities.QuestionsActivity">
-
-
-
+    tools:context=".Activities.QuestionaireActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
