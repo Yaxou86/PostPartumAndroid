@@ -2,7 +2,9 @@ package com.example.postpartumapp.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Choices {
+import java.io.Serializable;
+
+public class ChoicesDataModel implements Serializable {
 
     @SerializedName("title")
     private String title;
@@ -11,7 +13,7 @@ public class Choices {
     private Integer value;
 
 
-    public Choices(String title, Integer value){
+    public ChoicesDataModel(String title, Integer value){
         this.title = title;
         this.value = value;
     }

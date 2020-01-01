@@ -9,7 +9,8 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.postpartumapp.Network.RetrofitClientInstance
 import com.example.postpartumapp.R
-import com.example.postpartumapp.model.RetroQuestionnaire
+import com.example.postpartumapp.model.RetroQuestionnaireDataModel
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,8 +19,9 @@ import retrofit2.Response
 class DialogActivity : Activity() {
 
     lateinit var progerssProgressDialog: ProgressDialog
-    var dataList: RetroQuestionnaire ?= null
+    var dataList: RetroQuestionnaireDataModel?= null
     private var disclaimerText: TextView ?= null
+    private var gson : Gson ?= null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +40,7 @@ class DialogActivity : Activity() {
         disclaimerButton.setOnClickListener()
         {
             val myIntent = Intent(this@DialogActivity, QuestionaireActivity::class.java)
+            myIntent.putExtra("questions_set", dataList)
             this.startActivity(myIntent)
         }
 
@@ -47,11 +50,11 @@ class DialogActivity : Activity() {
     private fun getData() {
         val serviceCall = RetrofitClientInstance.getRetrofitInstance()
             .create(RetrofitClientInstance.GetDataService::class.java)
-        serviceCall.allQuestions.enqueue(object : Callback<RetroQuestionnaire> {
+        serviceCall.allQuestions.enqueue(object : Callback<RetroQuestionnaireDataModel> {
 
             override fun onResponse(
-                call: Call<RetroQuestionnaire>,
-                response: Response<RetroQuestionnaire>
+                call: Call<RetroQuestionnaireDataModel>,
+                response: Response<RetroQuestionnaireDataModel>
             ) {
                 progerssProgressDialog.dismiss()
 
@@ -83,7 +86,7 @@ class DialogActivity : Activity() {
 
             }
 
-            override fun onFailure(call: Call<RetroQuestionnaire>, t: Throwable) {
+            override fun onFailure(call: Call<RetroQuestionnaireDataModel>, t: Throwable) {
                 Log.e("Yasmina Error Tang", t.message)
                 progerssProgressDialog.dismiss()
             }
@@ -93,7 +96,7 @@ class DialogActivity : Activity() {
 
     }
 
-    private fun displayDisclaimer(dataList: RetroQuestionnaire) {
+    private fun displayDisclaimer(dataList: RetroQuestionnaireDataModel) {
         disclaimerText?.text = dataList.disclaimer
 
     }

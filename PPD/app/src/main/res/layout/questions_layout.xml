@@ -38,69 +38,12 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="x/n" />
 
-        <TextView
-            android:id="@+id/question_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="32dp"
-            android:text="First Question: Are you okay? "
-            android:textColor="@android:color/black"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/questions_remaining" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            app:cardUseCompatPadding="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline">
-
-            <LinearLayout
-                android:id="@+id/linearLayout_Options"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:orientation="vertical">
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-
-        <Button
-            android:id="@+id/next_button"
-            android:layout_width="361dp"
-            android:layout_height="46dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="48dp"
-            android:background="@android:color/black"
-            android:padding="4dp"
-            android:text="Following Question"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="250dp" />
+        <com.example.postpartumapp.UIBehavior.NoSwipeViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp"
+            app:layout_constraintBottom_toBottomOf="@id/questions_remaining" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

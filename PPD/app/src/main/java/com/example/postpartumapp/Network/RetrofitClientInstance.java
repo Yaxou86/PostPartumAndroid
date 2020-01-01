@@ -1,6 +1,6 @@
 package com.example.postpartumapp.Network;
 
-import com.example.postpartumapp.model.RetroQuestionnaire;
+import com.example.postpartumapp.model.RetroQuestionnaireDataModel;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -28,7 +28,7 @@ public class RetrofitClientInstance {
     public interface GetDataService {
 
         @GET("/PostPartumApp/ppdQuestionnaire")
-        Call<RetroQuestionnaire> getAllQuestions();
+        Call<RetroQuestionnaireDataModel> getAllQuestions();
     }
 
 }

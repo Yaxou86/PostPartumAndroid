@@ -2,9 +2,10 @@ package com.example.postpartumapp.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class RetroQuestionnaire {
+public class RetroQuestionnaireDataModel implements Serializable {
 
     @SerializedName("id")
     private String id;
@@ -34,10 +35,10 @@ public class RetroQuestionnaire {
     private String scaleHigh;
 
     @SerializedName("questions")
-    private List<Questions> questions;
+    private List<QuestionsDataModel> questions;
 
 
-    public RetroQuestionnaire(String id, String type, String title,String totalQuestions,String description, String disclaimer, String scaleLow, String scaleMedium, String scaleHigh, List<Questions> questions ){
+    public RetroQuestionnaireDataModel(String id, String type, String title, String totalQuestions, String description, String disclaimer, String scaleLow, String scaleMedium, String scaleHigh, List<QuestionsDataModel> questions ){
 
         this.id = id;
         this.type = type;
@@ -126,10 +127,10 @@ public class RetroQuestionnaire {
     }
 
     //list of questions
-    public List<Questions> getQuestions(){
+    public List<QuestionsDataModel> getQuestions(){
         return questions;
     }
-    public void  setQuestions (List <Questions> questions){
+    public void  setQuestions (List <QuestionsDataModel> questions){
         this.questions = questions;
     }
 

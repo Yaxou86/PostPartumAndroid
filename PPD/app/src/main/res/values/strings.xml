@@ -8,4 +8,6 @@
     <string name="disclaimer_title">Disclaimer</string>
     <string name="disclaimer_button">I agree</string>
     <string name="title_activity_questionaire">QuestionaireActivity</string>
+    <string name="next">next</string>
+    <string name="finish">finish</string>
 </resources>
