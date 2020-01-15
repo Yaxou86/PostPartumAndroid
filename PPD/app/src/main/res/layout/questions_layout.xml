@@ -20,8 +20,8 @@
             android:layout_width="0dp"
             android:layout_height="24dp"
             android:layout_margin="5dp"
-            android:progressBackgroundTint="@android:color/holo_blue_bright"
-            android:progressTint="@android:color/white"
+            android:progressBackgroundTint="@android:color/white"
+            android:progressTint="@color/fuchsia"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

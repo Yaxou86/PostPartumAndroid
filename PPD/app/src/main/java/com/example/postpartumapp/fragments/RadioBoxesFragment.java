@@ -1,7 +1,5 @@
 package com.example.postpartumapp.fragments;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -13,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -69,15 +68,13 @@ public class RadioBoxesFragment extends Fragment
         questionRBTypeTextView.setText(radioButtonTypeQuestion.getQuestion());
         radioGroupForChoices = rootView.findViewById(R.id.radioGroupForChoices);
 
+
         nextOrFinishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (currentPagePosition == ((QuestionaireActivity) mContext).getTotalQuestionsSize())
+                if (currentPagePosition == ((QuestionaireActivity) mContext).questionaireTotalQuestions())
                 {
-                    /* Here, You go back from where you started OR If you want to go next Activity just change the Intent*/
-                    Intent returnIntent = new Intent();
-                    mContext.setResult(Activity.RESULT_OK, returnIntent);
-                    mContext.finish();
+                    Toast.makeText(mContext, "Need to implement the Resutls activity", Toast.LENGTH_LONG).show();
 
                 } else
                 {
@@ -89,6 +86,11 @@ public class RadioBoxesFragment extends Fragment
 
 
         return rootView;
+    }
+
+    private void initialQuestionSetup() {
+        ((QuestionaireActivity) mContext).updateQuestionnaireProgress(0);
+
     }
 
     private void saveActionsOfRadioBox()
@@ -155,10 +157,8 @@ public class RadioBoxesFragment extends Fragment
             rb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if (screenVisible) {
                         clickedRadioButtonPosition = radioButtonArrayList.indexOf(buttonView);
                         RadioBoxesFragment.this.saveActionsOfRadioBox();
-                    }
                 }
             });
         }
@@ -173,24 +173,13 @@ public class RadioBoxesFragment extends Fragment
 
         /* If the current question is last in the questionnaire then
         the "Next" button will change into "Finish" button*/
-        if (currentPagePosition == ((QuestionaireActivity) mContext).getTotalQuestionsSize())
+        if (currentPagePosition == ((QuestionaireActivity) mContext).questionaireTotalQuestions())
         {
             nextOrFinishButton.setText(R.string.finish);
         } else
         {
             nextOrFinishButton.setText(R.string.next);
         }
-
-//        Log.e("Super", radioButtonTypeQuestion.getScaleHigh());
-
-
-
-        /*if (currentPagePosition == ((QuestionActivity) mContext).getTotalQuestionsSize())
-        {
-            nextOrFinishButton.setText(R.string.finish);
-        } else
-        {
-            nextOrFinishButton.setText(R.string.next);
-        }*/
+        initialQuestionSetup();
     }
 }

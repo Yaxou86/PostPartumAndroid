@@ -61,29 +61,6 @@ class DialogActivity : Activity() {
                 dataList = response.body()!!
                 displayDisclaimer(dataList!!)
 
-
-                //TODO: Remove this once everything works well
-                /*Log.e("Yasmina Tangou", Gson().toJson(response.body()?.id))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.type))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.title))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.totalQuestions))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.description))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.disclaimer))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.scaleLow))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.scaleMedium))
-                Log.e("Yasmina Tangou", Gson().toJson(response.body()?.scaleHigh))*/
-
-                /* for(item in response.body()?.questions!!) {
-                     Log.e("Yasmina Tangou",  Gson().toJson(item.question))
-                     //Log.e("Yasmina Tangou",  Gson().toJson(item.choices))
-                     for(item2 in item.choices) {
-                         Log.e("Yasmina Tangou",  item2.title)
-                         Log.e("Yasmina Tangou",  item2.value.toString())
-
-                     }
-                 }
- */
-
             }
 
             override fun onFailure(call: Call<RetroQuestionnaireDataModel>, t: Throwable) {

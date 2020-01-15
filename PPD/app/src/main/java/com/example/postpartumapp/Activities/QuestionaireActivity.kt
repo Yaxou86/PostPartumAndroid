@@ -1,6 +1,9 @@
 package com.example.postpartumapp.Activities
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
@@ -13,43 +16,39 @@ import java.util.*
 
 class QuestionaireActivity : AppCompatActivity() {
 
-    val totalQuestionsSize: Int = 10
     internal val fragmentArrayList = ArrayList<Fragment>()
     private var questionsViewPager: ViewPager? = null
+    var myQuestionModel: RetroQuestionnaireDataModel ? = null
+    var questionsRemaining: TextView? = null
+    var topProgressBar: ProgressBar? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.example.postpartumapp.R.layout.questions_layout)
+        setContentView(R.layout.questions_layout)
 
-        val myQuestionModel =
+        questionsRemaining = findViewById(R.id.questions_remaining)
+        topProgressBar = findViewById(R.id.determinantProgressBar)
+
+
+
+         myQuestionModel =
             intent.getSerializableExtra("questions_set") as RetroQuestionnaireDataModel
-        setDataOnView(myQuestionModel)
-
-
+        setDataOnView(myQuestionModel!!)
     }
+
+    fun questionaireTotalQuestions(): Int {
+        return myQuestionModel?.questions?.size!!
+    }
+
+
 
     private fun setDataOnView(questionModel: RetroQuestionnaireDataModel) {
 
         val questionItems = questionModel.questions
 
-        /* totalQuestions = questionsItems.size.toString()
-         val questionPosition = "1/$totalQuestions"
-         setTextWithSpan(questionPosition)
-
-         preparingQuestionInsertionInDb(questionsItems)
-         preparingInsertionInDb(questionsItems)*/
-
         for (i in questionItems.indices) {
             val question = questionItems[i]
-           /* Log.e("Mehdi", question.question)
-            Log.e("Mehsi", question.name)
-            Log.e("Mehdi", question.title)*/
-            for (j in question.choices.indices) {
-                val questionChoices = question.choices[j]
-               /* Log.e("Mehdi", questionChoices.title)
-                Log.e("Mehdi", questionChoices.value.toString())*/
-            }
 
             val radioButtonBundle = Bundle()
             radioButtonBundle.putSerializable("question", question)
@@ -59,23 +58,33 @@ class QuestionaireActivity : AppCompatActivity() {
             radioBoxesFragment.arguments = radioButtonBundle
             fragmentArrayList.add(radioBoxesFragment)
 
+            questionsRemaining?.text = question.title
+
         }
 
          questionsViewPager = findViewById(R.id.pager)
         questionsViewPager?.offscreenPageLimit = 1
          val mPagerAdapter = ViewPagerAdapter(supportFragmentManager, fragmentArrayList)
         questionsViewPager?.adapter = mPagerAdapter
+
     }
+
+
 
     fun nextQuestion() {
-        val item = questionsViewPager!!.currentItem + 1
+        var item = questionsViewPager!!.currentItem + 1
         questionsViewPager!!.currentItem = item
 
-        val currentQuestionPosition = (item + 1).toString()
-
-        /*val questionPosition = "$currentQuestionPosition/$totalQuestions"
-        setTextWithSpan(questionPosition)*/
-
+        val currentQuestionPosition: Int = item++
+        updateQuestionnaireProgress(currentQuestionPosition)
     }
+
+    @SuppressLint("NewApi")
+    fun updateQuestionnaireProgress (progress: Int) {
+        questionsRemaining?.text = myQuestionModel?.questions?.get(progress)?.title
+        topProgressBar!!.setProgress((progress + 1)*10, true)
+    }
+
+
 
 }
