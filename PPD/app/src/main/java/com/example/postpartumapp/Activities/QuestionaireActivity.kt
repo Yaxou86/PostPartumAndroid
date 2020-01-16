@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
@@ -11,6 +12,7 @@ import com.example.postpartumapp.Adapter.ViewPagerAdapter
 import com.example.postpartumapp.R
 import com.example.postpartumapp.fragments.RadioBoxesFragment
 import com.example.postpartumapp.model.RetroQuestionnaireDataModel
+import kotlinx.android.synthetic.main.footer.*
 import java.util.*
 
 
@@ -19,9 +21,11 @@ class QuestionaireActivity : AppCompatActivity() {
     internal val fragmentArrayList = ArrayList<Fragment>()
     private var questionsViewPager: ViewPager? = null
     var myQuestionModel: RetroQuestionnaireDataModel ? = null
+
     var questionsRemaining: TextView? = null
     var topProgressBar: ProgressBar? = null
 
+   var Button = nextOrFinishButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +39,12 @@ class QuestionaireActivity : AppCompatActivity() {
          myQuestionModel =
             intent.getSerializableExtra("questions_set") as RetroQuestionnaireDataModel
         setDataOnView(myQuestionModel!!)
+
     }
+
+
+
+
 
     fun questionaireTotalQuestions(): Int {
         return myQuestionModel?.questions?.size!!
@@ -85,6 +94,9 @@ class QuestionaireActivity : AppCompatActivity() {
         topProgressBar!!.setProgress((progress + 1)*10, true)
     }
 
+    fun goToResultsActivity() {
+        Toast.makeText(this, "Need to implement the INTENT HERE ", Toast.LENGTH_LONG).show()
+    }
 
 
 }

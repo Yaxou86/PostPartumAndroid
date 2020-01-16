@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -74,8 +73,7 @@ public class RadioBoxesFragment extends Fragment
             public void onClick(View v) {
                 if (currentPagePosition == ((QuestionaireActivity) mContext).questionaireTotalQuestions())
                 {
-                    Toast.makeText(mContext, "Need to implement the Resutls activity", Toast.LENGTH_LONG).show();
-
+                    ((QuestionaireActivity) mContext).goToResultsActivity();
                 } else
                 {
                     ((QuestionaireActivity) mContext).nextQuestion();

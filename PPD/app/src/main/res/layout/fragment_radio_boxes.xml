@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tols="http://schemas.android.com/tools"
+    android:backgroundTint="#FFCDD2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -13,8 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:lineSpacingMultiplier="1.2"
+        android:backgroundTint="#f48fb1"
         android:padding="16dp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,11 +28,13 @@
         android:id="@+id/dividerInRB"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="@color/black"
+        android:background="#bf5f82"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionRBTypeTextView"
         />
+
+
 
     <ScrollView
         android:id="@+id/contentInScrollView"
@@ -40,13 +44,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dividerInRB"
+        android:backgroundTint="@color/fuchsia"
         >
 
         <RadioGroup
             android:id="@+id/radioGroupForChoices"
+
+            android:backgroundTint="@color/bisque"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+
             >
 
         </RadioGroup>
@@ -66,5 +74,9 @@
         >
 
     </include>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

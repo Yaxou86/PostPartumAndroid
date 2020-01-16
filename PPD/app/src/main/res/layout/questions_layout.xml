@@ -12,7 +12,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorBackground">
 
         <ProgressBar
             android:id="@+id/determinantProgressBar"
@@ -21,7 +22,7 @@
             android:layout_height="24dp"
             android:layout_margin="5dp"
             android:progressBackgroundTint="@android:color/white"
-            android:progressTint="@color/fuchsia"
+            android:progressTint="#f48fb1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,6 +34,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
             android:text="Questions 3/100"
+            android:textColorHint="@color/black"
             android:textColor="@android:color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
