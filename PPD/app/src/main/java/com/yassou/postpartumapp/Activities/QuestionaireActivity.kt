@@ -1,6 +1,7 @@
 package com.yassou.postpartumapp.Activities
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -9,10 +10,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.yassou.postpartumapp.Adapter.ViewPagerAdapter
-import com.yassou.postpartumapp.R
 import com.yassou.postpartumapp.fragments.RadioBoxesFragment
 import com.yassou.postpartumapp.model.RetroQuestionnaireDataModel
+
 import java.util.*
+
+
 
 
 class QuestionaireActivity : AppCompatActivity() {
@@ -28,10 +31,10 @@ class QuestionaireActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.questions_layout)
+        setContentView(com.yassou.postpartumapp.R.layout.questions_layout)
 
-        questionsRemaining = findViewById(R.id.questions_remaining)
-        topProgressBar = findViewById(R.id.determinantProgressBar)
+        questionsRemaining = findViewById(com.yassou.postpartumapp.R.id.questions_remaining)
+        topProgressBar = findViewById(com.yassou.postpartumapp.R.id.determinantProgressBar)
 
 
 
@@ -65,7 +68,7 @@ class QuestionaireActivity : AppCompatActivity() {
 
         }
 
-        questionsViewPager = findViewById(R.id.pager)
+        questionsViewPager = findViewById(com.yassou.postpartumapp.R.id.pager)
         questionsViewPager?.offscreenPageLimit = 1
         val mPagerAdapter = ViewPagerAdapter(supportFragmentManager, fragmentArrayList)
         questionsViewPager?.adapter = mPagerAdapter
@@ -91,11 +94,15 @@ class QuestionaireActivity : AppCompatActivity() {
 
     fun goToResultsActivity() {
         Toast.makeText(this, "Total Score is:$totalScore", Toast.LENGTH_LONG).show()
+
+
+        val myIntent = Intent(this@QuestionaireActivity, ResultsActivity::class.java)
+        this@QuestionaireActivity.startActivity(myIntent)
     }
+
 
     private fun tallyScore(myScore: Int) {
         totalScore += myScore
     }
-
-
 }
+

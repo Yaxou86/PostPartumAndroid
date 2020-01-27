@@ -1,68 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.androidx.com/apk/res-auto"
+    xmlns:app2="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.ResultsActivity"
-    >
+    android:background="@color/colorBackground">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/answerToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:padding="0dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp"
-        app:contentInsetStartWithNavigation="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            >
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="163dp"
+        android:layout_height="21dp"
+        android:textColor="#000000"
 
-            <TextView
-                android:id="@+id/answerToolbarTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:ellipsize="marquee"
-                android:gravity="center_vertical"
-                android:text="Your Score"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textSize="20sp"
-                />
 
-        </RelativeLayout>
+        app2:layout_constraintBottom_toTopOf="@+id/emoji"
+        app2:layout_constraintEnd_toEndOf="parent"
 
-    </androidx.appcompat.widget.Toolbar>
+        app2:layout_constraintStart_toStartOf="parent"
+        app2:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <ScrollView
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatImageView
+
+        android:id="@+id/emoji"
+        android:layout_width="110dp"
+        android:layout_height="111dp"
+        app2:layout_constraintEnd_toEndOf="parent"
+        app2:layout_constraintHorizontal_bias="0.521"
+        app2:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/hours"
+        app:layout_constraintStart_toStartOf="@+id/hours"
+        app:layout_constraintTop_toTopOf="@+id/join"
+        tools:layout_editor_absoluteY="236dp" />
+
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="332dp"
+        android:layout_height="231dp"
+        android:fontFamily="casual"
+        android:text="@string/result_text"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app2:layout_constraintBottom_toTopOf="@+id/schedule_button"
+        app2:layout_constraintEnd_toEndOf="parent"
+        app2:layout_constraintStart_toStartOf="parent"
+        app2:layout_constraintTop_toBottomOf="@+id/emoji"
+        app2:layout_constraintVertical_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="@+id/join"
+        app:layout_constraintEnd_toStartOf="@+id/join"
+        app:layout_constraintStart_toEndOf="@+id/d" />
+
+    <Button
+        android:id="@+id/schedule_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clipToPadding="true"
-        android:paddingBottom="55dp"
+        android:layout_marginBottom="56dp"
+        android:text="Schedule your appointment"
+        app2:layout_constraintBottom_toBottomOf="parent"
+        app2:layout_constraintEnd_toEndOf="parent"
+        app2:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answerToolbar"
-        >
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/resultLinearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
 
-        </LinearLayout>
-    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
