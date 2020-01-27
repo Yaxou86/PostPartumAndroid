@@ -1,4 +1,4 @@
-package com.example.postpartumapp.Activities
+package com.yassou.postpartumapp.Activities
 
 import android.content.Intent
 import android.net.Uri
@@ -16,13 +16,13 @@ class WelcomeScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.example.postpartumapp.R.layout.welcome_screen_layout)
+        setContentView(com.yassou.postpartumapp.R.layout.welcome_screen_layout)
 
         val imageView = ImageView(this)
-        imageView.setImageResource(com.example.postpartumapp.R.drawable.ppd)
+        imageView.setImageResource(com.yassou.postpartumapp.R.drawable.ppd)
 
 
-        val textView = findViewById<TextView>(com.example.postpartumapp.R.id.what_is_PPD)
+        val textView = findViewById<TextView>(com.yassou.postpartumapp.R.id.what_is_PPD)
         textView.setOnClickListener()
         {
 
@@ -33,7 +33,7 @@ class WelcomeScreenActivity : AppCompatActivity() {
 
         }
 
-        val testStarterbutton = findViewById<Button>(com.example.postpartumapp.R.id.take_a_test)
+        val testStarterbutton = findViewById<Button>(com.yassou.postpartumapp.R.id.take_a_test)
 
         testStarterbutton.setOnClickListener()
         {

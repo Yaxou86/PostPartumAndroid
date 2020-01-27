@@ -1,8 +1,8 @@
-package com.example.postpartumapp.Activities
+package com.yassou.postpartumapp.Activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.postpartumapp.R
+import com.yassou.postpartumapp.R
 
 class ResultsActivity : AppCompatActivity() {
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.postpartumapp">
+    package="com.yassou.postpartumapp">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,13 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Activities.ResultsActivity"></activity>
+        <activity android:name="com.yassou.postpartumapp.Activities.ResultsActivity"></activity>
         <activity
-            android:name=".Activities.QuestionaireActivity"
+            android:name="com.yassou.postpartumapp.Activities.QuestionaireActivity"
             android:label="@string/title_activity_questionaire"
             android:theme="@style/NoActionBar"></activity>
         <activity
-            android:name=".Activities.WelcomeScreenActivity"
+            android:name="com.yassou.postpartumapp.Activities.WelcomeScreenActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.DialogActivity"
+            android:name="com.yassou.postpartumapp.Activities.DialogActivity"
             android:theme="@android:style/Theme.Holo.Dialog" />
     </application>
 

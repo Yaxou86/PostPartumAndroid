@@ -1,4 +1,4 @@
-package com.example.postpartumapp.model;
+package com.yassou.postpartumapp.model;
 
 import com.google.gson.annotations.SerializedName;
 

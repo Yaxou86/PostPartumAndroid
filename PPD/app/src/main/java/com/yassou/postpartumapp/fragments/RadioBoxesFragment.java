@@ -1,4 +1,4 @@
-package com.example.postpartumapp.fragments;
+package com.yassou.postpartumapp.fragments;
 
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -16,10 +16,10 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
-import com.example.postpartumapp.Activities.QuestionaireActivity;
-import com.example.postpartumapp.R;
-import com.example.postpartumapp.model.ChoicesDataModel;
-import com.example.postpartumapp.model.QuestionsDataModel;
+import com.yassou.postpartumapp.Activities.QuestionaireActivity;
+import com.yassou.postpartumapp.R;
+import com.yassou.postpartumapp.model.ChoicesDataModel;
+import com.yassou.postpartumapp.model.QuestionsDataModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,36 +27,29 @@ import java.util.List;
 /**
  * This fragment provide the RadioButton/Single Options.
  */
-public class RadioBoxesFragment extends Fragment
-{
+public class RadioBoxesFragment extends Fragment {
     private final ArrayList<RadioButton> radioButtonArrayList = new ArrayList<>();
-    private boolean screenVisible = false;
+
     private FragmentActivity mContext;
     private Button nextOrFinishButton;
     private QuestionsDataModel radioButtonTypeQuestion;
-    //private Button previousButton;
     private TextView questionRBTypeTextView;
     private RadioGroup radioGroupForChoices;
     private boolean atLeastOneChecked = false;
-    private String questionId = "";
     private int currentPagePosition = 0;
     private int clickedRadioButtonPosition = 0;
-    private String qState = "0";
+    int score;
 
-    public RadioBoxesFragment()
-    {
+    public RadioBoxesFragment() {
         // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Bundle bundle = getArguments();
 
-        if (getArguments() != null)
-        {
+        if (getArguments() != null) {
             radioButtonTypeQuestion = (QuestionsDataModel) bundle.getSerializable("question");
-            //questionId = String.valueOf(radioButtonTypeQuestion != null ? radioButtonTypeQuestion.getId() : 0);
             currentPagePosition = getArguments().getInt("page_position") + 1;
         }
 
@@ -71,12 +64,10 @@ public class RadioBoxesFragment extends Fragment
         nextOrFinishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (currentPagePosition == ((QuestionaireActivity) mContext).questionaireTotalQuestions())
-                {
+                if (currentPagePosition == ((QuestionaireActivity) mContext).questionaireTotalQuestions()) {
                     ((QuestionaireActivity) mContext).goToResultsActivity();
-                } else
-                {
-                    ((QuestionaireActivity) mContext).nextQuestion();
+                } else {
+                    ((QuestionaireActivity) mContext).nextQuestion(score);
                 }
 
             }
@@ -91,26 +82,20 @@ public class RadioBoxesFragment extends Fragment
 
     }
 
-    private void saveActionsOfRadioBox()
-    {
-        for (int i = 0; i < radioButtonArrayList.size(); i++)
-        {
-            if (i == clickedRadioButtonPosition)
-            {
+    private void saveActionsOfRadioBox() {
+        for (int i = 0; i < radioButtonArrayList.size(); i++) {
+            if (i == clickedRadioButtonPosition) {
                 RadioButton radioButton = radioButtonArrayList.get(i);
-                if (radioButton.isChecked())
-                {
+                if (radioButton.isChecked()) {
                     atLeastOneChecked = true;
 
                 }
             }
         }
 
-        if (atLeastOneChecked)
-        {
+        if (atLeastOneChecked) {
             nextOrFinishButton.setEnabled(true);
-        } else
-        {
+        } else {
             nextOrFinishButton.setEnabled(false);
         }
     }
@@ -121,10 +106,8 @@ public class RadioBoxesFragment extends Fragment
     }
 
 
-
     @Override
-    public void onActivityCreated(Bundle savedInstanceState)
-    {
+    public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         mContext = getActivity();
@@ -133,8 +116,7 @@ public class RadioBoxesFragment extends Fragment
         List<ChoicesDataModel> choices = radioButtonTypeQuestion.getChoices();
         radioButtonArrayList.clear();
 
-        for (ChoicesDataModel choice : choices)
-        {
+        for (final ChoicesDataModel choice : choices) {
             RadioButton rb = new RadioButton(mContext);
             rb.setText(choice.getTitle());
             rb.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
@@ -155,27 +137,27 @@ public class RadioBoxesFragment extends Fragment
             rb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        clickedRadioButtonPosition = radioButtonArrayList.indexOf(buttonView);
-                        RadioBoxesFragment.this.saveActionsOfRadioBox();
+                    clickedRadioButtonPosition = radioButtonArrayList.indexOf(buttonView);
+                    RadioBoxesFragment.this.saveActionsOfRadioBox();
+                    if (isChecked) {
+                        score = choice.getValue();
+                    }
                 }
             });
+
         }
 
-        if (atLeastOneChecked)
-        {
+        if (atLeastOneChecked) {
             nextOrFinishButton.setEnabled(true);
-        } else
-        {
+        } else {
             nextOrFinishButton.setEnabled(false);
         }
 
         /* If the current question is last in the questionnaire then
         the "Next" button will change into "Finish" button*/
-        if (currentPagePosition == ((QuestionaireActivity) mContext).questionaireTotalQuestions())
-        {
+        if (currentPagePosition == ((QuestionaireActivity) mContext).questionaireTotalQuestions()) {
             nextOrFinishButton.setText(R.string.finish);
-        } else
-        {
+        } else {
             nextOrFinishButton.setText(R.string.next);
         }
         initialQuestionSetup();

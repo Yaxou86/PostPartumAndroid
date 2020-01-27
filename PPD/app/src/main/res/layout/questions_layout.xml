@@ -40,7 +40,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="x/n" />
 
-        <com.example.postpartumapp.UIBehavior.NoSwipeViewPager
+        <com.yassou.postpartumapp.UIBehavior.NoSwipeViewPager
             android:id="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

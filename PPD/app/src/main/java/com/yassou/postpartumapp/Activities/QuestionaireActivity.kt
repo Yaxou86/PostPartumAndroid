@@ -1,4 +1,4 @@
-package com.example.postpartumapp.Activities
+package com.yassou.postpartumapp.Activities
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -8,11 +8,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
-import com.example.postpartumapp.Adapter.ViewPagerAdapter
-import com.example.postpartumapp.R
-import com.example.postpartumapp.fragments.RadioBoxesFragment
-import com.example.postpartumapp.model.RetroQuestionnaireDataModel
-import kotlinx.android.synthetic.main.footer.*
+import com.yassou.postpartumapp.Adapter.ViewPagerAdapter
+import com.yassou.postpartumapp.R
+import com.yassou.postpartumapp.fragments.RadioBoxesFragment
+import com.yassou.postpartumapp.model.RetroQuestionnaireDataModel
 import java.util.*
 
 
@@ -20,12 +19,12 @@ class QuestionaireActivity : AppCompatActivity() {
 
     internal val fragmentArrayList = ArrayList<Fragment>()
     private var questionsViewPager: ViewPager? = null
-    var myQuestionModel: RetroQuestionnaireDataModel ? = null
+    var myQuestionModel: RetroQuestionnaireDataModel? = null
 
     var questionsRemaining: TextView? = null
     var topProgressBar: ProgressBar? = null
 
-   var Button = nextOrFinishButton
+    var totalScore: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,20 +35,15 @@ class QuestionaireActivity : AppCompatActivity() {
 
 
 
-         myQuestionModel =
+        myQuestionModel =
             intent.getSerializableExtra("questions_set") as RetroQuestionnaireDataModel
         setDataOnView(myQuestionModel!!)
 
     }
 
-
-
-
-
     fun questionaireTotalQuestions(): Int {
         return myQuestionModel?.questions?.size!!
     }
-
 
 
     private fun setDataOnView(questionModel: RetroQuestionnaireDataModel) {
@@ -71,16 +65,17 @@ class QuestionaireActivity : AppCompatActivity() {
 
         }
 
-         questionsViewPager = findViewById(R.id.pager)
+        questionsViewPager = findViewById(R.id.pager)
         questionsViewPager?.offscreenPageLimit = 1
-         val mPagerAdapter = ViewPagerAdapter(supportFragmentManager, fragmentArrayList)
+        val mPagerAdapter = ViewPagerAdapter(supportFragmentManager, fragmentArrayList)
         questionsViewPager?.adapter = mPagerAdapter
 
     }
 
 
+    fun nextQuestion(currentScore: Int) {
+        tallyScore(currentScore)
 
-    fun nextQuestion() {
         var item = questionsViewPager!!.currentItem + 1
         questionsViewPager!!.currentItem = item
 
@@ -89,13 +84,17 @@ class QuestionaireActivity : AppCompatActivity() {
     }
 
     @SuppressLint("NewApi")
-    fun updateQuestionnaireProgress (progress: Int) {
+    fun updateQuestionnaireProgress(progress: Int) {
         questionsRemaining?.text = myQuestionModel?.questions?.get(progress)?.title
-        topProgressBar!!.setProgress((progress + 1)*10, true)
+        topProgressBar!!.setProgress((progress + 1) * 10, true)
     }
 
     fun goToResultsActivity() {
-        Toast.makeText(this, "Need to implement the INTENT HERE ", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Total Score is:$totalScore", Toast.LENGTH_LONG).show()
+    }
+
+    private fun tallyScore(myScore: Int) {
+        totalScore += myScore
     }
 
 

@@ -1,4 +1,4 @@
-package com.example.postpartumapp
+package com.yassou.postpartumapp
 
 import org.junit.Test
 
