@@ -3,14 +3,15 @@ package com.yassou.postpartumapp.Activities
 import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
+import android.text.Spanned
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import com.yassou.postpartumapp.Network.RetrofitClientInstance
-import com.yassou.postpartumapp.R
 import com.yassou.postpartumapp.model.RetroQuestionnaireDataModel
-import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,16 +20,14 @@ import retrofit2.Response
 class DialogActivity : Activity() {
 
     lateinit var progerssProgressDialog: ProgressDialog
-    var dataList: RetroQuestionnaireDataModel?= null
-    private var disclaimerText: TextView ?= null
-    private var gson : Gson ?= null
-
+    var dataList: RetroQuestionnaireDataModel? = null
+    private var disclaimerText: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.dialog)
+        setContentView(com.yassou.postpartumapp.R.layout.dialog)
 
-        disclaimerText = findViewById(R.id.disclaimer_text)
+        disclaimerText = findViewById(com.yassou.postpartumapp.R.id.disclaimer_text)
 
         progerssProgressDialog = ProgressDialog(this)
         progerssProgressDialog.setTitle("Loading")
@@ -36,7 +35,7 @@ class DialogActivity : Activity() {
         progerssProgressDialog.show()
         getData()
 
-        val disclaimerButton = findViewById<Button>(R.id.disclaimer_button)
+        val disclaimerButton = findViewById<Button>(com.yassou.postpartumapp.R.id.disclaimer_button)
         disclaimerButton.setOnClickListener()
         {
             val myIntent = Intent(this@DialogActivity, QuestionaireActivity::class.java)
@@ -64,7 +63,7 @@ class DialogActivity : Activity() {
             }
 
             override fun onFailure(call: Call<RetroQuestionnaireDataModel>, t: Throwable) {
-                Log.e("Yasmina Error Tang", t.message)
+                Log.e("Error Tang", t.message)
                 progerssProgressDialog.dismiss()
             }
 
@@ -74,7 +73,15 @@ class DialogActivity : Activity() {
     }
 
     private fun displayDisclaimer(dataList: RetroQuestionnaireDataModel) {
-        disclaimerText?.text = dataList.disclaimer
+        disclaimerText?.text = fromHtml(dataList.disclaimer)
 
+    }
+
+    fun fromHtml(source: String): Spanned {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Html.fromHtml(source, Html.FROM_HTML_MODE_LEGACY)
+        } else {
+            Html.fromHtml(source)
+        }
     }
 }
