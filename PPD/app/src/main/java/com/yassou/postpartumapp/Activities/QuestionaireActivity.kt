@@ -5,14 +5,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.yassou.postpartumapp.Adapter.ViewPagerAdapter
 import com.yassou.postpartumapp.fragments.RadioBoxesFragment
 import com.yassou.postpartumapp.model.RetroQuestionnaireDataModel
-
 import java.util.*
 
 
@@ -26,6 +24,7 @@ class QuestionaireActivity : AppCompatActivity() {
 
     var questionsRemaining: TextView? = null
     var topProgressBar: ProgressBar? = null
+
 
     var totalScore: Int = 0
 
@@ -93,11 +92,10 @@ class QuestionaireActivity : AppCompatActivity() {
     }
 
     fun goToResultsActivity() {
-        Toast.makeText(this, "Total Score is:$totalScore", Toast.LENGTH_LONG).show()
 
-
-        val myIntent = Intent(this@QuestionaireActivity, ResultsActivity::class.java)
-        this@QuestionaireActivity.startActivity(myIntent)
+        val myIntent = Intent(this@QuestionaireActivity,ResultsActivity::class.java) //not application context
+        myIntent.putExtra("score", totalScore.toString())
+        startActivity(myIntent)
     }
 
 

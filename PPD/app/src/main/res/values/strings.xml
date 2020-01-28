@@ -1,11 +1,12 @@
 <resources xmlns:tel="http://schemas.android.com/apk/res-auto">
     <string name="app_name">PostPartumApp</string>
-    <string name="title">Post Partum Depression Evaluation</string>
+    <string name="title">PostPartum Depression Evaluation</string>
     <string name="evaluation_button">Take a Test</string>
     <string name="ppd_definition_button">What is ppd?</string>
     <string name="toast_message">Taking you to your test</string>
     <string name="title_activity_questions">QuestionsActivity</string>
     <string name="disclaimer_title">Disclaimer</string>
+    <string name="app_title">PostPartum Depression</string>
     <string name="disclaimer_button">I agree</string>
     <string name="result_text">
         What’s happening to you isn’t normal and you can not ignore it anymore. It’s not your fault. It is okay for you to talk to a doctor.
@@ -14,4 +15,5 @@
     <string name="title_activity_questionaire">QuestionaireActivity</string>
     <string name="next">next</string>
     <string name="finish">finish</string>
+    <string name="result_title">Your Results</string>
 </resources>
