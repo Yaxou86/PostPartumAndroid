@@ -39,6 +39,7 @@ public class RadioBoxesFragment extends Fragment {
     private int currentPagePosition = 0;
     private int clickedRadioButtonPosition = 0;
     int score;
+    String scale;
 
     public RadioBoxesFragment() {
         // Required empty public constructor
@@ -67,7 +68,7 @@ public class RadioBoxesFragment extends Fragment {
                 if (currentPagePosition == ((QuestionaireActivity) mContext).questionaireTotalQuestions()) {
                     ((QuestionaireActivity) mContext).goToResultsActivity();
                 } else {
-                    ((QuestionaireActivity) mContext).nextQuestion(score);
+                    ((QuestionaireActivity) mContext).nextQuestion(score) ;
                 }
 
             }
@@ -120,7 +121,7 @@ public class RadioBoxesFragment extends Fragment {
             RadioButton rb = new RadioButton(mContext);
             rb.setText(choice.getTitle());
             rb.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
-            rb.setTextColor(ContextCompat.getColor(mContext, R.color.blue));
+            rb.setTextColor(ContextCompat.getColor(mContext, R.color.purple));
             rb.setPadding(10, 40, 10, 40);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             params.leftMargin = 25;

@@ -25,7 +25,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:elevation="@dimen/cardview_compat_inset_shadow"
+        android:text="@string/app_title"
         android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="20sp"

@@ -18,14 +18,16 @@ public class ChoicesDataModel implements Serializable {
         this.value = value;
     }
 
+
     //title
     public String getTitle() {
         return title;
-
     }
     public void setTitle (String title){
         this.title = title;
     }
+
+
 
     //value
     public Integer getValue() {

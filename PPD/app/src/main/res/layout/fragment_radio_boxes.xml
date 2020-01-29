@@ -49,7 +49,6 @@
 
         <RadioGroup
             android:id="@+id/radioGroupForChoices"
-
             android:backgroundTint="@color/bisque"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -3,6 +3,7 @@ package com.yassou.postpartumapp.Activities
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -25,12 +26,13 @@ class QuestionaireActivity : AppCompatActivity() {
     var questionsRemaining: TextView? = null
     var topProgressBar: ProgressBar? = null
 
-
     var totalScore: Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.yassou.postpartumapp.R.layout.questions_layout)
+
 
         questionsRemaining = findViewById(com.yassou.postpartumapp.R.id.questions_remaining)
         topProgressBar = findViewById(com.yassou.postpartumapp.R.id.determinantProgressBar)
@@ -64,14 +66,13 @@ class QuestionaireActivity : AppCompatActivity() {
             fragmentArrayList.add(radioBoxesFragment)
 
             questionsRemaining?.text = question.title
-
         }
+
 
         questionsViewPager = findViewById(com.yassou.postpartumapp.R.id.pager)
         questionsViewPager?.offscreenPageLimit = 1
         val mPagerAdapter = ViewPagerAdapter(supportFragmentManager, fragmentArrayList)
         questionsViewPager?.adapter = mPagerAdapter
-
     }
 
 
@@ -85,22 +86,40 @@ class QuestionaireActivity : AppCompatActivity() {
         updateQuestionnaireProgress(currentQuestionPosition)
     }
 
+
     @SuppressLint("NewApi")
     fun updateQuestionnaireProgress(progress: Int) {
         questionsRemaining?.text = myQuestionModel?.questions?.get(progress)?.title
         topProgressBar!!.setProgress((progress + 1) * 10, true)
     }
 
+
     fun goToResultsActivity() {
+
+       // myQuestionModel.scaleLow
+       Log.e("Yasmina hmara", scale())
 
         val myIntent = Intent(this@QuestionaireActivity,ResultsActivity::class.java) //not application context
         myIntent.putExtra("score", totalScore.toString())
+        myIntent.putExtra("scale", scale())
+
+
         startActivity(myIntent)
     }
 
 
     private fun tallyScore(myScore: Int) {
         totalScore += myScore
+    }
+
+    private fun scale(): String {
+
+
+        return when (totalScore){
+            in 0..9 -> myQuestionModel?.scaleLow.toString()
+            in 10..12->  myQuestionModel?.scaleMedium.toString()
+            else -> myQuestionModel?.scaleHigh.toString()
+        }
     }
 }
 
