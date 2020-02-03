@@ -2,19 +2,19 @@
 <androidx.constraintlayout.widget.ConstraintLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/plum"
     tools:context=".Activities.WelcomeScreenActivity">
 
 
     <FrameLayout
         android:id="@+id/disclaimer_layout"
         android:layout_width="284dp"
-        android:layout_height="538dp"
-        android:backgroundTint="@color/dark_gray"
+        android:layout_height="wrap_content"
         tools:ignore="MissingConstraints"
+        android:backgroundTint="@color/gray"
         tools:layout_editor_absoluteX="78dp"
         tools:layout_editor_absoluteY="149dp">
 
@@ -24,7 +24,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="50dp"
-            android:backgroundTint="@color/testButton"
             android:fontFamily="serif-monospace"
             android:text="Disclaimer"
             android:textAlignment="center"
@@ -44,7 +43,6 @@
             android:text="PLACEHOLDER"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteY="117dp" />
 

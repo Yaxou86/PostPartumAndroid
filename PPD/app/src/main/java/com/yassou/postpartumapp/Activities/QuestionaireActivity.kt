@@ -54,7 +54,7 @@ class QuestionaireActivity : AppCompatActivity() {
 
         val questionItems = questionModel.questions
 
-        for (i in questionItems.indices) {
+        for (i in questionItems?.indices!!) {
             val question = questionItems[i]
 
             val radioButtonBundle = Bundle()

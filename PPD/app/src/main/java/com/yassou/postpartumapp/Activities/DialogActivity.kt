@@ -47,9 +47,9 @@ class DialogActivity : Activity() {
     }
 
     private fun getData() {
-        val serviceCall = RetrofitClientInstance.getRetrofitInstance()
-            .create(RetrofitClientInstance.GetDataService::class.java)
-        serviceCall.allQuestions.enqueue(object : Callback<RetroQuestionnaireDataModel> {
+        val serviceCall = RetrofitClientInstance.retrofitInstance
+            ?.create(RetrofitClientInstance.GetDataService::class.java)
+        serviceCall?.allQuestions?.enqueue(object : Callback<RetroQuestionnaireDataModel> {
 
             override fun onResponse(
                 call: Call<RetroQuestionnaireDataModel>,
@@ -77,7 +77,7 @@ class DialogActivity : Activity() {
 
     }
 
-    fun fromHtml(source: String): Spanned {
+    fun fromHtml(source: String?): Spanned {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             Html.fromHtml(source, Html.FROM_HTML_MODE_LEGACY)
         } else {
