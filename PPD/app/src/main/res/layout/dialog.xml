@@ -2,58 +2,69 @@
 <androidx.constraintlayout.widget.ConstraintLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/plum"
+    android:background="@color/light_slate_gray"
     tools:context=".Activities.WelcomeScreenActivity">
 
 
     <FrameLayout
         android:id="@+id/disclaimer_layout"
-        android:layout_width="284dp"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        android:backgroundTint="@color/gray"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="149dp">
+        android:layout_width="306dp"
+        android:layout_height="643dp"
+        android:background="@color/light_slate_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
+            android:layout_width="207dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="50dp"
-            android:fontFamily="serif-monospace"
+            android:fontFamily="monospace"
             android:text="Disclaimer"
             android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="149dp"
             tools:layout_editor_absoluteY="105dp" />
 
-
         <TextView
             android:id="@+id/disclaimer_text"
-            android:layout_width="273dp"
-            android:layout_height="352dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="90dp"
+            android:layout_width="262dp"
+            android:layout_height="368dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="150dp"
             android:layout_marginRight="5dp"
-            android:backgroundTint="@color/testButton"
+            android:background="@color/alice_blue"
             android:fontFamily="serif-monospace"
             android:text="PLACEHOLDER"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="117dp" />
+            android:textColor="@color/black"/>
+
 
         <Button
             android:id="@+id/disclaimer_button"
-            android:layout_width="wrap_content"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="450dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="550dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/alice_blue"
             android:clickable="true"
-            android:text="@string/disclaimer_button" />
+            android:fontFamily="monospace"
+            android:text="@string/disclaimer_button"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
 
     </FrameLayout>

@@ -16,7 +16,7 @@ class ResultsActivity : AppCompatActivity() {
 
 
         val totalScore =  intent.getStringExtra("score")
-        finalScore.text = "Total Score is:$totalScore"
+        finalScore.text = "$totalScore"
 
         val scale = intent.getStringExtra("scale")
         ppdLevel.text = "Your ppd level is:$scale"

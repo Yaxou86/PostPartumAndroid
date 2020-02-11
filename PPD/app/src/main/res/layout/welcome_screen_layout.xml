@@ -59,7 +59,7 @@
         android:fontFamily="monospace"
         android:text="@string/ppd_definition_button"
         android:textAlignment="center"
-        android:textColor="@color/whatIsPpdText"
+        android:textColor="@color/purple"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/take_a_test"
         app:layout_constraintEnd_toEndOf="parent"

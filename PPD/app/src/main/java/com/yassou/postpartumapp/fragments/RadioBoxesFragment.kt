@@ -1,11 +1,13 @@
 package com.yassou.postpartumapp.fragments
 
+import android.os.Build
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -92,6 +94,7 @@ class RadioBoxesFragment : Fragment() {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
@@ -105,8 +108,10 @@ class RadioBoxesFragment : Fragment() {
             val rb = RadioButton(mContext)
             rb.text = choice.title
             rb.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
-            rb.setTextColor(ContextCompat.getColor(mContext!!, R.color.purple))
+            rb.setTextColor(ContextCompat.getColor(mContext!!, R.color.black))
             rb.setPadding(10, 40, 10, 40)
+
+            rb.setBackgroundColor(ContextCompat.getColor(mContext!!,R.color.colorBackground))
 
             val params = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -116,7 +121,7 @@ class RadioBoxesFragment : Fragment() {
             rb.layoutParams = params
 
             val view = View(mContext)
-            view.setBackgroundColor(ContextCompat.getColor(mContext!!, R.color.plum))
+            view.setBackgroundColor(ContextCompat.getColor(mContext!!, R.color.colorBackground))
             view.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 1)
 
             radioGroupForChoices!!.addView(rb)
@@ -148,4 +153,4 @@ class RadioBoxesFragment : Fragment() {
         }
         initialQuestionSetup()
     }
-}// Required empty public constructor
+}
