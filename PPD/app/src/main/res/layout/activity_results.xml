@@ -13,7 +13,7 @@
         android:layout_width="167dp"
         android:layout_height="34dp"
         android:background="@color/testButton"
-        android:fontFamily="Monospace"
+        android:fontFamily="@font/basic"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="18dp"
@@ -28,19 +28,20 @@
 
     <TextView
         android:id="@+id/result_text"
-        android:layout_width="407dp"
-        android:layout_height="189dp"
+        android:layout_width="408dp"
+        android:layout_height="154dp"
         android:background="@color/testButton"
-        android:fontFamily="monospace"
-        android:text="@string/result_text"
+        android:fontFamily="@font/basic"
         android:shadowColor="@color/lavender_blush"
+        android:text="@string/result_text"
         android:textAlignment="center"
         android:textColor="@color/cardview_dark_background"
         app2:layout_constraintBottom_toBottomOf="parent"
         app2:layout_constraintEnd_toEndOf="parent"
+        app2:layout_constraintHorizontal_bias="0.333"
         app2:layout_constraintStart_toStartOf="parent"
         app2:layout_constraintTop_toBottomOf="@+id/total_score"
-        app2:layout_constraintVertical_bias="0.645"
+        app2:layout_constraintVertical_bias="0.501"
         app:layout_constraintBottom_toBottomOf="@+id/join"
         app:layout_constraintEnd_toStartOf="@+id/join"
         app:layout_constraintStart_toEndOf="@+id/d" />
@@ -50,22 +51,22 @@
         android:layout_width="413dp"
         android:layout_height="31dp"
         android:background="@color/testButton"
-        android:fontFamily="serif-monospace"
+        android:fontFamily="@font/damion"
         android:text="@string/result_title"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:textStyle="bold"
+        android:textStyle="normal|bold"
         app2:layout_constraintBottom_toTopOf="@+id/total_score"
         app2:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="2dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="2dp" />
 
     <TextView
         android:id="@+id/scale"
         android:layout_width="313dp"
         android:layout_height="52dp"
-        android:fontFamily="monospace"
+        android:fontFamily="@font/basic"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="@color/cardview_dark_background"
@@ -75,7 +76,7 @@
         app2:layout_constraintEnd_toEndOf="parent"
         app2:layout_constraintStart_toStartOf="parent"
         app2:layout_constraintTop_toBottomOf="@+id/total_score"
-        app2:layout_constraintVertical_bias="0.129" />
+        app2:layout_constraintVertical_bias="0.068" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

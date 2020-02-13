@@ -1,13 +1,12 @@
 package com.yassou.postpartumapp.fragments
 
-import android.os.Build
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -82,19 +81,11 @@ class RadioBoxesFragment : Fragment() {
             }
         }
 
-        if (atLeastOneChecked) {
-            nextOrFinishButton!!.isEnabled = true
-        } else {
-            nextOrFinishButton!!.isEnabled = false
-        }
-    }
-
-    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
-        super.setUserVisibleHint(isVisibleToUser)
+        nextOrFinishButton!!.isEnabled = atLeastOneChecked
     }
 
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    @SuppressLint("NewApi")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
@@ -108,9 +99,9 @@ class RadioBoxesFragment : Fragment() {
             val rb = RadioButton(mContext)
             rb.text = choice.title
             rb.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
+            rb.setTextAppearance(R.style.fontForRadioButtonChoice)
             rb.setTextColor(ContextCompat.getColor(mContext!!, R.color.black))
             rb.setPadding(10, 40, 10, 40)
-
             rb.setBackgroundColor(ContextCompat.getColor(mContext!!,R.color.colorBackground))
 
             val params = LinearLayout.LayoutParams(
@@ -138,11 +129,7 @@ class RadioBoxesFragment : Fragment() {
 
         }
 
-        if (atLeastOneChecked) {
-            nextOrFinishButton!!.isEnabled = true
-        } else {
-            nextOrFinishButton!!.isEnabled = false
-        }
+        nextOrFinishButton!!.isEnabled = atLeastOneChecked
 
         /* If the current question is last in the questionnaire then
         the "Next" button will change into "Finish" button*/

@@ -28,7 +28,7 @@
             android:layout_height="46dp"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="50dp"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/ovo"
             android:text="Disclaimer"
             android:textAlignment="center"
             android:textColor="@color/black"
@@ -45,10 +45,10 @@
             android:layout_marginTop="150dp"
             android:layout_marginRight="5dp"
             android:background="@color/alice_blue"
-            android:fontFamily="serif-monospace"
+            android:fontFamily="monospace"
             android:text="PLACEHOLDER"
             android:textAlignment="center"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
 
         <Button
@@ -60,7 +60,7 @@
             android:layout_marginRight="20dp"
             android:background="@color/alice_blue"
             android:clickable="true"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/ovo"
             android:text="@string/disclaimer_button"
             android:textColor="@color/black"
             android:textSize="15sp"
