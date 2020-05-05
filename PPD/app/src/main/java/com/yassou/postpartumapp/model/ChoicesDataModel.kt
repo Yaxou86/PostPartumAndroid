@@ -9,5 +9,4 @@ class ChoicesDataModel(
     //title
     var title: String?, @field:SerializedName("value")
     //value
-    var value: Int?
-) : Serializable
+    var value: Int?) : Serializable

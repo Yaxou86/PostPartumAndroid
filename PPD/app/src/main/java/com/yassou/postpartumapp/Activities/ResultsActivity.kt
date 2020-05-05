@@ -21,8 +21,5 @@ class ResultsActivity : AppCompatActivity() {
         val scale = intent.getStringExtra("scale")
         ppdLevel.text = "Your ppd level is:$scale"
 
-
-
-
     }
 }

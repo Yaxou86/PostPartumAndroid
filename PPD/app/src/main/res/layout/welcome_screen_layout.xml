@@ -14,11 +14,12 @@
         android:layout_height="215dp"
         android:layout_marginTop="192dp"
         android:outlineSpotShadowColor="@color/black"
+        android:src="@drawable/ppd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ppd" />
+        />
 
     <TextView
         android:id="@+id/title"
@@ -40,7 +41,7 @@
         android:layout_height="49dp"
         android:backgroundTint="@color/testButton"
         android:elevation="@dimen/cardview_compat_inset_shadow"
-        android:fontFamily="monospace"
+        android:fontFamily="@font/lancelot"
         android:text="@string/evaluation_button"
         android:textColor="@color/textColor"
         app:layout_constraintBottom_toBottomOf="parent"

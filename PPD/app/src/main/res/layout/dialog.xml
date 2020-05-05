@@ -14,22 +14,20 @@
         android:id="@+id/disclaimer_layout"
         android:layout_width="306dp"
         android:layout_height="643dp"
-        android:background="@color/light_slate_gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+        android:background="@color/colorBackground"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="44dp">
 
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="207dp"
-            android:layout_height="46dp"
+            android:layout_width="211dp"
+            android:layout_height="53dp"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/ovo"
-            android:text="Disclaimer"
+            android:layout_marginTop="70dp"
+            android:fontFamily="@font/basic"
+            android:text="DISCLAIMER"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="15sp"
@@ -37,30 +35,31 @@
             tools:layout_editor_absoluteX="149dp"
             tools:layout_editor_absoluteY="105dp" />
 
+
         <TextView
             android:id="@+id/disclaimer_text"
-            android:layout_width="262dp"
-            android:layout_height="368dp"
-            android:layout_marginLeft="20dp"
+            android:layout_width="282dp"
+            android:layout_height="291dp"
+            android:layout_marginLeft="11dp"
             android:layout_marginTop="150dp"
-            android:layout_marginRight="5dp"
-            android:background="@color/alice_blue"
-            android:fontFamily="monospace"
+            android:layout_marginRight="11dp"
+            android:background="@color/testButton"
+            android:fontFamily="@font/cambo"
             android:text="PLACEHOLDER"
             android:textAlignment="center"
-            android:textColor="@color/black" />
-
+            android:textColor="@color/black"
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/disclaimer_button"
-            android:layout_width="260dp"
+            android:layout_width="269dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="550dp"
+            android:layout_marginTop="450dp"
             android:layout_marginRight="20dp"
-            android:background="@color/alice_blue"
+            android:background="@color/testButton"
             android:clickable="true"
-            android:fontFamily="@font/ovo"
+            android:fontFamily="@font/basic"
             android:text="@string/disclaimer_button"
             android:textColor="@color/black"
             android:textSize="15sp"

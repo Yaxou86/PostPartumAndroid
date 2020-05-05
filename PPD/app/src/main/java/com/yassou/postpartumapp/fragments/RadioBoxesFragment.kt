@@ -33,10 +33,7 @@ class RadioBoxesFragment : Fragment() {
     internal var score: Int = 0
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val bundle = arguments
 
         if (arguments != null) {

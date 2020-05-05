@@ -25,12 +25,10 @@ class WelcomeScreenActivity : AppCompatActivity() {
         val textView = findViewById<TextView>(com.yassou.postpartumapp.R.id.what_is_PPD)
         textView.setOnClickListener()
         {
-
             val openURL = Intent(Intent.ACTION_VIEW)
             openURL.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             openURL.data = Uri.parse(WEB_URL)
             startActivity(openURL)
-
         }
 
         val testStarterbutton = findViewById<Button>(com.yassou.postpartumapp.R.id.take_a_test)

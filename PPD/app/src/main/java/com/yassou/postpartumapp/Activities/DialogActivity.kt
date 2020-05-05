@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.text.Html
 import android.text.Spanned
 import android.util.Log
+import android.view.Window
 import android.widget.Button
 import android.widget.TextView
 import com.yassou.postpartumapp.Network.RetrofitClientInstance
@@ -23,9 +24,12 @@ class DialogActivity : Activity() {
     var dataList: RetroQuestionnaireDataModel? = null
     private var disclaimerText: TextView? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(com.yassou.postpartumapp.R.layout.dialog)
+
 
         disclaimerText = findViewById(com.yassou.postpartumapp.R.id.disclaimer_text)
 

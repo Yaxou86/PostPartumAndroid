@@ -18,9 +18,7 @@ class QuestionsDataModel(
 
     @field:SerializedName("question")
     //question
-    var question: String?
-
-) : Serializable {
+    var question: String?) : Serializable {
 
     //list of choices
     @SerializedName("choices")

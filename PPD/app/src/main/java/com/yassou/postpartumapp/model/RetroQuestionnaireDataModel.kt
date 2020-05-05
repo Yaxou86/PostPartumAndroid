@@ -5,28 +5,46 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 class RetroQuestionnaireDataModel(
-    @field:SerializedName("id")
     // id
-    var id: String?, @field:SerializedName("type")
+    @field:SerializedName("id")
+    var id: String?,
+
     //type
-    var type: String?, @field:SerializedName("title")
+    @field:SerializedName("type")
+    var type: String?,
+
+
     //title
-    var title: String?, @field:SerializedName("totalQuestions")
+    @field:SerializedName("title")
+    var title: String?,
+
     //total questions
-    var totalQuestions: String?, @field:SerializedName("description")
+    @field:SerializedName("totalQuestions")
+    var totalQuestions: String?,
+
     //description
-    var description: String?, @field:SerializedName("disclaimer")
+    @field:SerializedName("description")
+    var description: String?,
+
     //disclaimer
-    var disclaimer: String?, @field:SerializedName("scaleLow")
+    @field:SerializedName("disclaimer")
+    var disclaimer: String?,
+
     //scale low
-    var scaleLow: String?, @field:SerializedName("scaleMedium")
+    @field:SerializedName("scaleLow")
+    var scaleLow: String?,
+
     //scale medium
-    var scaleMedium: String?, @field:SerializedName("scaleHigh")
+    @field:SerializedName("scaleMedium")
+    var scaleMedium: String?,
+
     //scale high
-    var scaleHigh: String?, @field:SerializedName("questions")
+    @field:SerializedName("scaleHigh")
+    var scaleHigh: String?,
+
     //list of questions
-    var questions: List<QuestionsDataModel>?
-) : Serializable
+    @field:SerializedName("questions")
+    var questions: List<QuestionsDataModel>?) : Serializable
 
 
 
