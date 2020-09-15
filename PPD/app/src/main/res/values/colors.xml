@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorBackground">#FEDBD0</color>
+    <color name="colorBackgroundOpacity">#26FEDBD0</color>
     <color name="testButton">#FEEAE6</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="whatIsPpdText">#3700B3</color>

@@ -1,7 +1,7 @@
 <resources xmlns:tel="http://schemas.android.com/apk/res-auto">
     <string name="app_name">PostPartumApp</string>
-    <string name="title">PostPartum Depression Evaluation</string>
-    <string name="evaluation_button">Take a Test</string>
+    <string name="title">PostPartum Depression</string>
+    <string name="evaluation_button">Start  evaluation</string>
     <string name="ppd_definition_button">What is ppd?</string>
     <string name="toast_message">Taking you to your test</string>
     <string name="title_activity_questions">QuestionsActivity</string>
@@ -15,5 +15,5 @@
     <string name="title_activity_questionaire">QuestionaireActivity</string>
     <string name="next">next</string>
     <string name="finish">finish</string>
-    <string name="result_title">Your Results</string>
+    <string name="result_title">Result</string>
 </resources>

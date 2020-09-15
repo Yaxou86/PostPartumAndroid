@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.androidx.com/apk/res-auto"
     xmlns:app2="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,70 +13,63 @@
         android:id="@+id/total_score"
         android:layout_width="167dp"
         android:layout_height="34dp"
-        android:background="@color/testButton"
-        android:fontFamily="@font/actor"
+        android:fontFamily="@font/josefin_sans"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="18dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app2:layout_constraintBottom_toBottomOf="parent"
         app2:layout_constraintEnd_toEndOf="parent"
         app2:layout_constraintStart_toStartOf="parent"
         app2:layout_constraintTop_toTopOf="parent"
-        app2:layout_constraintVertical_bias="0.338"
+        app2:layout_constraintVertical_bias="0.378"
         app:layout_constraintBottom_toBottomOf="@+id/"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/result_text"
-        android:layout_width="375dp"
-        android:layout_height="86dp"
-        android:background="@color/testButton"
-        android:fontFamily="@font/lancelot"
-        android:shadowColor="@color/lavender_blush"
-        android:text="@string/result_text"
-        android:textAlignment="center"
-        android:textColor="@color/cardview_dark_background"
-        app2:layout_constraintBottom_toBottomOf="parent"
-        app2:layout_constraintEnd_toEndOf="parent"
-        app2:layout_constraintHorizontal_bias="0.333"
-        app2:layout_constraintStart_toStartOf="parent"
-        app2:layout_constraintTop_toBottomOf="@+id/total_score"
-        app2:layout_constraintVertical_bias="0.501"
-        app:layout_constraintBottom_toBottomOf="@+id/join"
-        app:layout_constraintEnd_toStartOf="@+id/join"
-        app:layout_constraintStart_toEndOf="@+id/d" />
-
-    <TextView
         android:id="@+id/result_title"
-        android:layout_width="413dp"
-        android:layout_height="31dp"
-        android:background="@color/testButton"
+        android:layout_width="389dp"
+        android:layout_height="21dp"
         android:fontFamily="@font/damion"
         android:text="@string/result_title"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="normal|bold"
         app2:layout_constraintBottom_toTopOf="@+id/total_score"
+        app2:layout_constraintEnd_toEndOf="parent"
+        app2:layout_constraintStart_toStartOf="parent"
         app2:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="2dp" />
+        app2:layout_constraintVertical_bias="0.465"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/scale"
         android:layout_width="313dp"
         android:layout_height="52dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/josefin_sans"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="@color/cardview_dark_background"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        app2:layout_constraintBottom_toTopOf="@+id/result_text"
+        android:textSize="18sp"
+
         app2:layout_constraintEnd_toEndOf="parent"
         app2:layout_constraintStart_toStartOf="parent"
         app2:layout_constraintTop_toBottomOf="@+id/total_score"
         app2:layout_constraintVertical_bias="0.068" />
+
+    <ImageView
+        android:layout_width="109dp"
+        android:layout_height="61dp"
+        android:src="@drawable/ppd"
+
+        app2:layout_constraintBottom_toBottomOf="parent"
+        app2:layout_constraintEnd_toEndOf="parent"
+        app2:layout_constraintHorizontal_bias="0.498"
+        app2:layout_constraintStart_toStartOf="parent"
+        app2:layout_constraintTop_toBottomOf="@+id/scale"
+        app2:layout_constraintVertical_bias="0.915" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

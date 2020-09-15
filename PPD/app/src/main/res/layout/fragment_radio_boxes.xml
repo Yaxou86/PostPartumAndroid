@@ -18,7 +18,7 @@
         android:padding="16dp"
         android:textColor="#000000"
         android:textSize="16sp"
-        android:fontFamily="@font/ovo"
+        android:fontFamily="@font/josefin_sans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -52,8 +52,9 @@
             android:backgroundTint="@color/bisque"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:orientation="vertical"
+            android:font = "@font/josefin_sans"
+
 
             >
 
@@ -64,14 +65,15 @@
     <include
         android:id="@+id/include"
         layout="@layout/footer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_width="411dp"
+        android:layout_height="60dp"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="36dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        >
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
     </include>
 
