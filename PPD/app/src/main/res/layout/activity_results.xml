@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground">
+    android:background="@drawable/my_button_bg">
 
 
     <TextView
@@ -60,16 +60,32 @@
         app2:layout_constraintVertical_bias="0.068" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="109dp"
         android:layout_height="61dp"
         android:src="@drawable/ppd"
-
         app2:layout_constraintBottom_toBottomOf="parent"
         app2:layout_constraintEnd_toEndOf="parent"
         app2:layout_constraintHorizontal_bias="0.498"
         app2:layout_constraintStart_toStartOf="parent"
         app2:layout_constraintTop_toBottomOf="@+id/scale"
         app2:layout_constraintVertical_bias="0.915" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="390dp"
+        android:layout_height="112dp"
+
+        android:fontFamily="@font/josefin_sans"
+        android:text="@string/result_text"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app2:layout_constraintBottom_toTopOf="@+id/imageView"
+        app2:layout_constraintEnd_toEndOf="parent"
+        app2:layout_constraintHorizontal_bias="0.523"
+        app2:layout_constraintStart_toStartOf="parent"
+        app2:layout_constraintTop_toBottomOf="@+id/scale"
+        app2:layout_constraintVertical_bias="0.913" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
