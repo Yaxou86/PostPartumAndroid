@@ -21,7 +21,7 @@
         app2:layout_constraintEnd_toEndOf="parent"
         app2:layout_constraintStart_toStartOf="parent"
         app2:layout_constraintTop_toTopOf="parent"
-        app2:layout_constraintVertical_bias="0.378"
+        app2:layout_constraintVertical_bias="0.242"
         app:layout_constraintBottom_toBottomOf="@+id/"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -72,13 +72,13 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="343dp"
-        android:layout_height="214dp"
+        android:layout_width="361dp"
+        android:layout_height="272dp"
         android:fontFamily="@font/josefin_sans"
         android:text="@string/result_text"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app2:layout_constraintBottom_toTopOf="@+id/imageView"
         app2:layout_constraintEnd_toEndOf="parent"

@@ -16,14 +16,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name="com.yassou.postpartumapp.Activities.ResultsActivity"></activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name="com.yassou.postpartumapp.Activities.ResultsActivity">
+
+
+        </activity>
         <activity
             android:name="com.yassou.postpartumapp.Activities.QuestionaireActivity"
             android:label="@string/title_activity_questionaire"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
         <activity
             android:name=".Activities.WelcomeScreenActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:screenOrientation="portrait"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,6 +40,7 @@
         </activity>
         <activity
             android:name="com.yassou.postpartumapp.Activities.DialogActivity"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Dialog"
             />
 
