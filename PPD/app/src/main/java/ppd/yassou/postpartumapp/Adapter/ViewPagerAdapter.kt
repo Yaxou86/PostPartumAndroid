@@ -1,4 +1,4 @@
-package com.yassou.postpartumapp.Adapter
+package ppd.yassou.postpartumapp.Adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

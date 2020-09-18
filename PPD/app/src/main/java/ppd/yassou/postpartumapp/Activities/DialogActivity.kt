@@ -1,4 +1,4 @@
-package com.yassou.postpartumapp.Activities
+package ppd.yassou.postpartumapp.Activities
 
 import android.app.Activity
 import android.app.ProgressDialog
@@ -11,8 +11,8 @@ import android.util.Log
 import android.view.Window
 import android.widget.Button
 import android.widget.TextView
-import com.yassou.postpartumapp.Network.RetrofitClientInstance
-import com.yassou.postpartumapp.model.RetroQuestionnaireDataModel
+import ppd.yassou.postpartumapp.Network.RetrofitClientInstance
+import ppd.yassou.postpartumapp.model.RetroQuestionnaireDataModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

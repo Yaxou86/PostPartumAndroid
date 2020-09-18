@@ -1,4 +1,4 @@
-package com.yassou.postpartumapp.model
+package ppd.yassou.postpartumapp.model
 
 import com.google.gson.annotations.SerializedName
 

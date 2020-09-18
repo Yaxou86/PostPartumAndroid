@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_slate_gray"
-    tools:context=".Activities.WelcomeScreenActivity">
+    tools:context="ppd.yassou.postpartumapp.Activities.WelcomeScreenActivity">
 
 
     <FrameLayout
@@ -31,7 +31,6 @@
             android:layout_marginRight="10dp"
             android:background="@color/colorBackground"
             android:fontFamily="@font/josefin_sans"
-            android:text="PLACEHOLDER"
             android:textAlignment="textStart"
             android:textColor="@color/cardview_dark_background"
             android:textSize="15sp" />

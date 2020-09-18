@@ -1,4 +1,4 @@
-package com.yassou.postpartumapp
+package ppd.yassou.postpartumapp
 
 import org.junit.Test
 

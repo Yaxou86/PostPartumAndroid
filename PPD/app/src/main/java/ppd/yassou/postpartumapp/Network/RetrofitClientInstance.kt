@@ -1,6 +1,6 @@
-package com.yassou.postpartumapp.Network
+package ppd.yassou.postpartumapp.Network
 
-import com.yassou.postpartumapp.model.RetroQuestionnaireDataModel
+import ppd.yassou.postpartumapp.model.RetroQuestionnaireDataModel
 
 import retrofit2.Call
 import retrofit2.Retrofit

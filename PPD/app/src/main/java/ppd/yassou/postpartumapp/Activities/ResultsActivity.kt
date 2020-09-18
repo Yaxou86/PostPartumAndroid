@@ -1,4 +1,4 @@
-package com.yassou.postpartumapp.Activities
+package ppd.yassou.postpartumapp.Activities
 
 import android.os.Bundle
 import android.widget.TextView

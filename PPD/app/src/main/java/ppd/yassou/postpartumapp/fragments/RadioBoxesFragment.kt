@@ -1,4 +1,4 @@
-package com.yassou.postpartumapp.fragments
+package ppd.yassou.postpartumapp.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -10,9 +10,9 @@ import android.widget.*
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import com.yassou.postpartumapp.Activities.QuestionaireActivity
+import ppd.yassou.postpartumapp.Activities.QuestionaireActivity
 import com.yassou.postpartumapp.R
-import com.yassou.postpartumapp.model.QuestionsDataModel
+import ppd.yassou.postpartumapp.model.QuestionsDataModel
 import java.util.*
 
 

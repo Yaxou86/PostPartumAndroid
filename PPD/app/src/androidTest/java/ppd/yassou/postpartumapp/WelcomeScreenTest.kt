@@ -1,4 +1,4 @@
-package com.yassou.postpartumapp
+package ppd.yassou.postpartumapp
 
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
@@ -9,7 +9,8 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
-import com.yassou.postpartumapp.Activities.WelcomeScreenActivity
+import com.yassou.postpartumapp.R
+import ppd.yassou.postpartumapp.Activities.WelcomeScreenActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -1,4 +1,4 @@
-package com.yassou.postpartumapp.Activities
+package ppd.yassou.postpartumapp.Activities
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -9,9 +9,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
-import com.yassou.postpartumapp.Adapter.ViewPagerAdapter
-import com.yassou.postpartumapp.fragments.RadioBoxesFragment
-import com.yassou.postpartumapp.model.RetroQuestionnaireDataModel
+import ppd.yassou.postpartumapp.Adapter.ViewPagerAdapter
+import ppd.yassou.postpartumapp.fragments.RadioBoxesFragment
+import ppd.yassou.postpartumapp.model.RetroQuestionnaireDataModel
 import java.util.*
 
 
@@ -61,7 +61,8 @@ class QuestionaireActivity : AppCompatActivity() {
             radioButtonBundle.putSerializable("question", question)
             radioButtonBundle.putInt("page_position", i)
 
-            val radioBoxesFragment = RadioBoxesFragment()
+            val radioBoxesFragment =
+                RadioBoxesFragment()
             radioBoxesFragment.arguments = radioButtonBundle
             fragmentArrayList.add(radioBoxesFragment)
 
@@ -71,7 +72,10 @@ class QuestionaireActivity : AppCompatActivity() {
 
         questionsViewPager = findViewById(com.yassou.postpartumapp.R.id.pager)
         questionsViewPager?.offscreenPageLimit = 1
-        val mPagerAdapter = ViewPagerAdapter(supportFragmentManager, fragmentArrayList)
+        val mPagerAdapter = ViewPagerAdapter(
+            supportFragmentManager,
+            fragmentArrayList
+        )
         questionsViewPager?.adapter = mPagerAdapter
     }
 
@@ -99,7 +103,8 @@ class QuestionaireActivity : AppCompatActivity() {
        // myQuestionModel.scaleLow
        Log.e("Yasmina hmara", scale())
 
-        val myIntent = Intent(this@QuestionaireActivity,ResultsActivity::class.java) //not application context
+        val myIntent = Intent(this@QuestionaireActivity,
+            ResultsActivity::class.java) //not application context
         myIntent.putExtra("score", totalScore.toString())
         myIntent.putExtra("scale", scale())
 

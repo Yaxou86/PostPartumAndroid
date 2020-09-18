@@ -1,4 +1,4 @@
-package com.yassou.postpartumapp.Activities
+package ppd.yassou.postpartumapp.Activities
 
 import android.content.Intent
 import android.net.Uri
