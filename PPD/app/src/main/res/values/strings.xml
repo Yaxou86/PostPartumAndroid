@@ -1,6 +1,6 @@
 <resources xmlns:tel="http://schemas.android.com/apk/res-auto">
-    <string name="app_name">PostPartumApp</string>
-    <string name="title">PostPartum Depression</string>
+    <string name="app_name">Postpartum Depression Test</string>
+    <string name="title">Postpartum Depression Test</string>
     <string name="evaluation_button">Start  evaluation</string>
     <string name="ppd_definition_button">What is ppd?</string>
     <string name="toast_message">Taking you to your test</string>
@@ -9,7 +9,7 @@
     <string name="app_title">PostPartum Depression</string>
     <string name="disclaimer_button">I agree</string>
     <string name="result_text">
-        What is happening to you is not normal and you can not ignore it anymore. It is not your fault. It is okay for you to talk to a doctor.
+        If you are experiencing a persistent Postpartum depression, it is not your fault. It is okay for you to talk to a doctor.
         It is okay for you to ask for help, go to therapy and do whatever is necessary for your health and that of your family.
         Postpartum depression and anxiety are temporary and treatable with professional help.</string>
     <string name="title_activity_questionaire">QuestionaireActivity</string>

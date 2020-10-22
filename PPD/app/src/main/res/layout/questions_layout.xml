@@ -7,7 +7,7 @@
     android:background="@color/cardview_light_background"
     android:fillViewport="true"
     android:orientation="vertical"
-    tools:context="ppd.yassou.postpartumapp.Activities.QuestionaireActivity">
+    tools:context="app.yassou.postpartumapp.Activities.QuestionaireActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,7 +42,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="x/n" />
 
-        <ppd.yassou.postpartumapp.UIBehavior.NoSwipeViewPager
+        <app.yassou.postpartumapp.UIBehavior.NoSwipeViewPager
             android:id="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

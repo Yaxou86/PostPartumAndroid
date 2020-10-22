@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context="ppd.yassou.postpartumapp.Activities.WelcomeScreenActivity">
+    tools:context="app.yassou.postpartumapp.Activities.WelcomeScreenActivity">
 
     <ImageView
         android:id="@+id/ppd_image"
@@ -23,10 +23,10 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="348dp"
+        android:layout_height="65dp"
         android:fontFamily="@font/damion"
-        android:text="@string/app_title"
+        android:text="@string/app_name"
         android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="20sp"
